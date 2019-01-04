@@ -1,0 +1,41 @@
+Arguments: 
+  /Users/carmen.fratila/.nvm/versions/node/v9.4.0/bin/node /usr/local/Cellar/yarn/1.7.0/libexec/bin/yarn.js add rxjs webapck webpack-dev-server typescript ts-loader
+
+PATH: 
+  /Users/carmen.fratila/.nvm/versions/node/v9.4.0/bin:/Users/carmen.fratila/.rvm/gems/ruby-2.4.2/bin:/Users/carmen.fratila/.rvm/gems/ruby-2.4.2@global/bin:/Users/carmen.fratila/.rvm/rubies/ruby-2.4.2/bin:/Users/carmen.fratila/.rvm/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  9.4.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/webapck: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:65656:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:134675:22)
+      at Request.emit (events.js:160:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:135658:10)
+      at Request.emit (events.js:160:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:135578:12)
+      at Object.onceWrapper (events.js:255:19)
+      at IncomingMessage.emit (events.js:165:20)
+      at endReadableNT (_stream_readable.js:1101:12)
+      at process._tickCallback (internal/process/next_tick.js:152:19)
+
+npm manifest: 
+  {
+    "name": "rxjs-learn",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
