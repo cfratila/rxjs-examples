@@ -18,10 +18,13 @@ ReactiveX - API for asynchronous programming with observable streams (http://rea
 - unsubscribe() - You can close an observer subscription
 
 **Cold Observable**
-- observable who's producer ( producer <=> subscribe (next()), emits values/events) is activetad 	  	once its subscription has been created
+- is an observable whose producer ( producer <=> subscribe (next()), emits values/events) is activated once a subscription has been created
+- a cold observable is an observable with a producer that's created inside of the observable
+- Whenever a new subscription is created, it will receive the same values, even the subscription was created at a different time
 
 **Hot Observable**
 - the producer emits values outside the observable (<=> producer is either created or activated 	  		outside of subscription)
+- a truly hot observable is one that emits values without a subscriber having subscribed to it
 
 **Subject**
  - different type of Observable that has different capabilities
