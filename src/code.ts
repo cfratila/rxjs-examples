@@ -8,20 +8,20 @@ import 'rxjs/add/operator/share';
 import { fromEvent } from 'rxjs/Observable/fromEvent';
 
 // --- Start L1 Observable create ---- ///
-// var observable = Observable.create(function subscribe(observer: any) {
-//   observer.next('Hey girls and guys!');
-//   observer.next('How are you?');
-//   observer.complete();
-//   observer.next('This will not send');
-// });
+var observable = Observable.create(function subscribe(observer: any) {
+  observer.next('Hey girls and guys!');
+  observer.next('How are you?');
+  observer.complete();
+  observer.next('This will not send');
+});
 
-// observable.subscribe(
-//   (x: any) => addItem(x),
-//   (err: any) => addItem(err),
-//   () => addItem('Completed')
-// );
+observable.subscribe(
+  (x: any) => addItem(x),
+  (err: any) => addItem(err),
+  () => addItem('Completed')
+);
 
-// --- End Observable create 1 ---- ///
+// --- End L1 Observable create ---- ///
 
 // --- Start L2 Observable ---- ///
 // var observable = Observable.create(function subscribe(observer: any) {
@@ -179,25 +179,25 @@ import { fromEvent } from 'rxjs/Observable/fromEvent';
 //--- End L7.1 ReplaySubject ---- ///
 
 //--- Start L8 AsyncSubject ---- ///
-var subject = new AsyncSubject();
+// var subject = new AsyncSubject();
 
-subject.subscribe(
-  (data) => addItem('Observer 1: ' + data),
-  (err) => addItem(err),
-  () => addItem('Observer 1 Completed')
-);
+// subject.subscribe(
+//   (data) => addItem('Observer 1: ' + data),
+//   (err) => addItem(err),
+//   () => addItem('Observer 1 Completed')
+// );
 
-var i = 1;
-var int = setInterval(() => subject.next(i++), 100);
+// var i = 1;
+// var int = setInterval(() => subject.next(i++), 100);
 
-setTimeout(() => {
-  var observer2 = subject.subscribe(
-    (data) => addItem('Observer 2: ' + data),
-    (err) => addItem(err),
-    () => addItem('Observer 2 Completed')
-  );
-  subject.complete();
-}, 500);
+// setTimeout(() => {
+//   var observer2 = subject.subscribe(
+//     (data) => addItem('Observer 2: ' + data),
+//     (err) => addItem(err),
+//     () => addItem('Observer 2 Completed')
+//   );
+//   subject.complete();
+// }, 500);
 //--- End L8 AsyncSubject ---- ///
 
 function addItem(val: any) {
