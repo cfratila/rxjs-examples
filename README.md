@@ -5,14 +5,11 @@ RxJs - javascript implementation of ReactiveX
 ReactiveX - API for asynchronous programming with observable streams (http://reactivex.io) (https://rxjs-dev.firebaseapp.com/api)
 
 **Stream**
- - a concept
- - values/event emitted over time like a timeline
- - Marble Diagram -> Stream: ---x------x-----x--------x--x---
- - a stream can easily represent asyncronous data arriving from a source. The best examples would be – users
- 	 clicking on a button, ajax responses, an interval etc
+ - a stream is a sequence of ongoing events ordered in time. It can emit three different things: a value (of some type), an error, or a "completed" signal. Consider that the "completed" takes place, for instance, when the current window or view containing that button is closed (e.g. values/event emitted over time like a timeline)
+ - Marble Diagram -> Stream: ---x------x-----x--------x--x--X----|---->
+ - we capture these emitted events only asynchronously, by defining a function that will execute when a value is emitted, another function when an error is emitted, and another function when 'completed' is emitted. Sometimes these last two can be omitted and you can just focus on defining the function for values. The "listening" to the stream is called subscribing. The functions we are defining are observers. The stream is the subject (or "observable") being observed. This is precisely the Observer Design Pattern.
 
 **Observable**
-- facilitates the stream; emits values and responds to them
 - add() - You can add child observers
 - remove() - Removing child observers that were added
 - unsubscribe() - You can close an observer subscription
@@ -20,7 +17,7 @@ ReactiveX - API for asynchronous programming with observable streams (http://rea
 **Cold Observable**
 - is an observable whose producer ( producer <=> subscribe (next()), emits values/events) is activated once a subscription has been created
 - a cold observable is an observable with a producer that's created inside of the observable
-- Whenever a new subscription is created, it will receive the same values, even the subscription was created at a different time
+- whenever a new subscription is created, it will receive the same values, even the subscription was created at a different time
 
 **Hot Observable**
 - the producer emits values outside the observable (<=> producer is either created or activated 	  		outside of subscription)
